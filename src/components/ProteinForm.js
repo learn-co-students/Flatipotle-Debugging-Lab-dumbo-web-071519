@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 
-const ProteinForm = () => {
+//had to pass in props as a param b/c its a functional component
+const ProteinForm = (props) => {
   return (
     <Fragment>
       <h1><label htmlFor="protein">Protein</label></h1>

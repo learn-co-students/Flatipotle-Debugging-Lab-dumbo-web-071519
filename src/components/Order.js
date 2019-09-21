@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
+// had to import side
+import Side from './Side'
 
 class Order extends Component {
   state = {
     isClicked: false
   }
 
+  //added setState statement
   handleClick = () => {
-    this.state.isClicked = !this.state.isClicked
+    this.setState({
+      isClicked: !this.state.isClicked
+    })
   }
 
   render() {

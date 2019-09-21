@@ -15,8 +15,8 @@ class Form extends Component {
   state = {
     ...DEFAULT_STATE
   }
-
-  handleSubmit() {
+  //had to pass event in as params
+  handleSubmit = (event) => {
     event.preventDefault()
     document.getElementById("order-form").reset()
     this.props.addOrder(this.state)
@@ -26,7 +26,7 @@ class Form extends Component {
     })
   }
 
-  handleChange() {
+  handleChange = (event) => {
     const itemType = event.target.name
     const item = event.target.value
 
@@ -42,29 +42,31 @@ class Form extends Component {
       })
   }
 
+  // had to rename props from handleOnChange to handleChange
   render() {
     return(
       <div className="ui raised container segment">
         <h1 className="ui block header">Order Form</h1>
         <form className="ui form" id="order-form" onSubmit={ this.handleSubmit }>
+          
           <ProteinForm
             protein={ this.state.protein }
-            handleOnChange={ this.handleChange }
+            handleChange={ this.handleChange }
           />
 
           <FillingForm
             fillings={ this.state.fillings }
-            handleOnChange={ this.handleChange }
+            handleChange={ this.handleChange }
           />
 
           <ToppingForm
             toppings={ this.state.toppings }
-            handleOnChange={ this.handleChange }
+            handleChange={ this.handleChange }
           />
 
           <SideForm
             sides={ this.state.sides }
-            handleOnChange={ this.handleChange }
+            handleChange={ this.handleChange }
           />
 
           <br />
