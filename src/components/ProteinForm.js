@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 
-const ProteinForm = () => {
+const ProteinForm = (props) => { //added (props)
+  console.log(props)
   return (
     <Fragment>
       <h1><label htmlFor="protein">Protein</label></h1>
